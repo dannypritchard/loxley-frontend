@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import loxley from '../assets/cat.jpg';
 
 export default function Home() {
     const [post, setPost] = useState(null);
@@ -18,6 +19,8 @@ export default function Home() {
     return (
         <>
             <p>Data from rust api: {(post as any).hello}</p>
+
+            <img src={loxley} alt="" className="w-500" />
         </>
     );
 }
