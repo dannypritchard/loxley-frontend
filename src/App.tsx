@@ -1,22 +1,21 @@
-import { useState, useEffect } from 'react';
 import './App.css';
-import axios from 'axios';
 
-const baseURL = `${import.meta.env.VITE_API_URL}/`;
+import { BrowserRouter, Route } from 'react-router-dom';
+import Home from './components/Home';
 
 function App() {
-    const [post, setPost] = useState(null);
-
-    useEffect(() => {
-        axios.get(baseURL).then((response: any) => {
-            setPost(response.data);
-        });
-    }, []);
-
-    if (!post) return null;
     return (
-        <div className="App">
-            <h1>{(post as any).hello}</h1>
+        <div className="App w-100 vh-100">
+            <header>
+                <h1 className="text-3xl font-bold underline">
+                    Loxley Industries
+                </h1>
+                <h2>a Danny Pritchard company</h2>
+            </header>
+
+            <BrowserRouter>
+                <Home />
+            </BrowserRouter>
         </div>
     );
 }
