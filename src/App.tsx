@@ -10,7 +10,6 @@ function App() {
                 <h1 className="text-3xl font-bold underline">
                     Loxley Industries
                 </h1>
-                <h2>a Danny Pritchard company</h2>
             </header>
 
             <BrowserRouter>
