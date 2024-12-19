@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import loxley from '../assets/cat.jpg';
 
 export default function Home() {
     type Data = {
@@ -29,14 +28,15 @@ export default function Home() {
             <h2>{post.title}</h2>
             <h3>{post.subtitle}</h3>
 
-            {post.content.map((item, index) => (
+            {/* {post.content.map((item, index) => (
                 <div key={index}>
                     <h4>{item.title}</h4>
                     <p>{item.content}</p>
                 </div>
-            ))}
+            ))} */}
 
-            <img src={loxley} alt="" className="w-500" />
+            <p><a href="mailto:danny.s.pritchard@gmail.com" className="text-red hover:text-red-dark hover:underline">Contact me</a></p>
+
         </>
     );
 }

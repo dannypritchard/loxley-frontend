@@ -2,19 +2,24 @@ import './App.css';
 
 import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './components/Home';
+import loxley from './assets/loxley.svg';
 
 function App() {
     return (
-        <div className="App w-100 vh-100">
-            <header>
-                <h1 className="text-3xl font-bold underline">
-                    Loxley Industries
-                </h1>
+        <div className="flex flex-col h-screen">
+            <header className="text-white p-4">
+                <img src={loxley} alt="Loxley Industries" />
             </header>
 
-            <BrowserRouter>
-                <Home />
-            </BrowserRouter>
+            <main className="flex-1 p-4 overflow-auto">
+                <BrowserRouter>
+                    <Home />
+                </BrowserRouter>
+            </main>
+
+            <footer className="text-white p-4">
+                <p className="text-center">Copyright 2024.</p>
+            </footer>
         </div>
     );
 }
