@@ -29,11 +29,11 @@ export default function Home() {
             <h2>{post.title}</h2>
             <h3>{post.subtitle}</h3>
 
-            {post.content.forEach((c) => (
-                <>
-                    <h4>{c.title}</h4>
-                    <p>{c.content}</p>
-                </>
+            {post.content.map((item, index) => (
+                <div key={index}>
+                    <h4>{item.title}</h4>
+                    <p>{item.content}</p>
+                </div>
             ))}
 
             <img src={loxley} alt="" className="w-500" />
