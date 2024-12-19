@@ -3,7 +3,15 @@ import axios from 'axios';
 import loxley from '../assets/cat.jpg';
 
 export default function Home() {
-    const [post, setPost] = useState(null);
+    type Data = {
+        title: string,
+        subtitle: string,
+        content: Array<{
+            title: string,
+            content: string,
+        }>,
+    };
+    const [post, setPost] = useState<Data>();
 
     const baseURL = `${import.meta.env.VITE_API_URL}/`;
 
@@ -18,7 +26,15 @@ export default function Home() {
     }
     return (
         <>
-            <p>Data from rust api: {(post as any).hello}</p>
+            <h2>{post.title}</h2>
+            <h3>{post.subtitle}</h3>
+
+            {post.content.forEach((c) => (
+                <>
+                    <h4>{c.title}</h4>
+                    <p>{c.content}</p>
+                </>
+            ))}
 
             <img src={loxley} alt="" className="w-500" />
         </>
