@@ -5,6 +5,7 @@ import Home from './components/Home';
 import loxley from './assets/loxley.svg';
 
 function App() {
+    const year = new Date().getFullYear();
     return (
         <div className="flex flex-col h-screen">
             <header className="text-white p-4">
@@ -18,7 +19,7 @@ function App() {
             </main>
 
             <footer className="text-white p-4">
-                <p className="text-center">Copyright 2024.</p>
+                <p className="text-center">Copyright {year}.</p>
             </footer>
         </div>
     );
